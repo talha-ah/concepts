@@ -1,10 +1,24 @@
-## Express
+# Express
 
 - Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
 
-## How can API's be secure
+# Microservices vs Monolith
 
-## CORS
+# How can API's be secure
+
+# CORS
+
+# Middlewares
+
+# Request Controller & how
+
+# Decouple Architecture
+
+# Interface & class
+
+# get vs post
+
+# put vs patch
 
 # Status codes
 
@@ -16,6 +30,6 @@
 - 502 Bad Gateway – This indicates an invalid response from an upstream server.
 - 503 Service Unavailable – This indicates that something unexpected happened on server side (It can be anything like server overload, some parts of the system failed, etc.).
 
-## Security:
+# Security:
 
 Always use SSL/TLS to encrypt the communication with your API. No exceptions. Period.

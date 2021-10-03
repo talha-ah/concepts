@@ -383,23 +383,21 @@ z() // how will z (that is y function) finds the value of a to log it's value? T
 - Memory over-consumption (the variables at upper levels are not garbage collected)
 - Can lead to memory leak if not properly handled
 
-# Questions
-
-## Function statement && Function declaration
+# Function statement && Function declaration
 
 ```javascript
 a() // Hoisted and can be called
 function a() {}
 ```
 
-## Function expression
+# Function expression
 
 ```javascript
 a() // Hoisted by undefined and can't be called (a is not a function)
 var a = function () {}
 ```
 
-## Anonymous Functions
+# Anonymous Functions
 
 - A function with no name
 - An anonymous functions are when functions are used as values.
@@ -408,34 +406,34 @@ var a = function () {}
 var a = function () {}
 ```
 
-## Named Function Expression
+# Named Function Expression
 
 ```javascript
 var a = function b() {}
 ```
 
-## First class Functions (Functions as First class citizens)
+# First class Functions (Functions as First class citizens)
 
 The ability to treat functions like any other variable when a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable.
 
-## Parameters vs Arguments
+# Parameters vs Arguments
 
 ```javascript
 function a(num1, num2) {} // parameters num1 & num2
 a(1, 2) // arguments 1 && 2
 ```
 
-## Arrow functions
+# Arrow functions
 
 ES6 (2015) Ecma Script
 
-## Pure Functions
+# Pure Functions
 
-## Callback Functions
+# Callback Functions
 
 A callback function is a function passed into another function as an argument
 
-## Garbage collection
+# Garbage collection
 
 - Freeing up the memory (deleting variables, removing event listeners) when not needed.
 - Garbage collector is a program which frees up the unutilized memory.
@@ -458,11 +456,11 @@ z() // logs 10
 
 ![V8 Engine 1.2](images/v8_engine.PNG)
 
-## What is V8
-
 ## Orinoco
 
 ## Oil Pam
+
+# What is V8
 
 ## Inlining
 
@@ -470,50 +468,62 @@ z() // logs 10
 
 ## Inline Caching
 
-## Event loop
+# Event loop
 
 - The job of the event loop is to check the callback queue and put the callback functions into the call stack
 - It's like a gatekeeper between callback queue and call stack and keeps on checking for callbacks to put them into call stack
 
-## Blocking vs non-blocking
+## Event loop Phases
 
-## Microtask queue
+## Macro/Micro Tasks of Event Loop
+
+## Strategies to use event loop functionality
+
+- setTimeout - 0
+- Batching your works (Big array to chunks, batch processing)
+- Web workers
+
+# Blocking vs non-blocking
+
+# Microtask queue
 
 - Higher priority
 - Callbacks functions from promises/mutation observers callback
 
-## Callback queue ( Task queue )
+# Callback queue ( Task queue, Event queue )
 
 - Lower Priority
 - Callbacks functions from setTimeout
 
-## Memory heap
+# Memory heap
 
-## Mutation observer
+# Mutation observer
 
-## Starvation of callback queue
+# Starvation of callback queue
 
 - When the callbacks inside callback queue don't get a chance to be executed because of large number of callbacks in microstask queue
 
-## Javascript Runtime Environment
+# Javascript Runtime Environment
 
 ## Just in time compilation (JIT)
 
 - Optimize the code at much as it can at runtime
 
-## Interpreter
+# Interpreter
 
 - Execute code line by line
 - Fast
 
-## Compiler
+# Compiler
 
 - Convert code to optimized version and then execute it
 - Efficiency
 
-## Concurrency Model
+# Streams & Duplex streams
 
-## Data hiding & Encapsulation
+# Concurrency Model
+
+# Data hiding & Encapsulation
 
 - Some functions don't have access to some variables
 - Encapsulate data so other part of program can't access it.
@@ -546,7 +556,7 @@ console.log(counter1.incrementCounter())
 console.log(counter1.decrementCounter())
 ```
 
-## Prototyping
+# Prototyping
 
 ```javascript
 const arr = [1,2,4,5]
@@ -558,11 +568,11 @@ Array.prototype.iterate = function () => {
 console.log(arr.iterate())
 ```
 
-## Inheritance
+# Inheritance
 
 One object trying to access the properties of an other object
 
-## Prototypal Inheritance
+# Prototypal Inheritance
 
 ```javascript
 const obj = {
@@ -583,7 +593,7 @@ console.log(obj.getIntro()) // talha23undefined
 console.log(obj2.getIntro()) // ahmed23lahore
 ```
 
-## this in arrow function & normal function
+# `this` in arrow function & normal function
 
 - It actually makes sense. In the regular function, a function always defines its this value. Arrow functions treat this keyword differently. They don’t define their own context since it doesn’t have its own this context. They inherit that from the parent scope whenever you call this.
 
@@ -601,19 +611,21 @@ console.log(parent.name_1()) // undefined is my name.
 console.log(parent.name_2()) // Talha Ahmad is my name.
 ```
 
-## Higher-order function (HOF)
+# Higher-order function (HOF)
 
 - A Higher-order function is a function that takes a function or returns a new function.
-
-## get vs post
-
-## put vs patch
 
 ## Promises
 
 ## async/await
 
-## microservices vs monolith
+## Webworkers
+
+- To run/execute code on a new thread
+- Does not run in window context
+- Does not have access to the DOM
+- Use method postMessage to communicate between threads (web workers)
+- Use event listener onMessage to receive messages from other threads (web workers)
 
 ## CLASS
 
