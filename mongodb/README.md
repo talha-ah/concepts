@@ -28,10 +28,10 @@
 
 ## Ways to use
 
-1- Monitor using EventEmitted's on() class
-2- Monitor using ChangeStreams's hasNext() (using while loop)
-3- Monitor using NodeJS Stream API
-4- Monitor using Atlas triggers
+1. Monitor using EventEmitted's on() class
+2. Monitor using ChangeStreams's hasNext() (using while loop)
+3. Monitor using NodeJS Stream API
+4. Monitor using Atlas triggers
 
 # Cluster
 
