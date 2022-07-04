@@ -1,3 +1,9 @@
-# concepts
+# Concepts - Prepare your interview
 
-If there's anything that isn't right or needs improvement. Create a pull request.
+Feedback and questions are welcome!
+If there's anything that isn't right, needs improvement or you want to add some awesome content. Create a pull request.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+Most open source projects use the MIT license. Feel free to choose whichever license you prefer.

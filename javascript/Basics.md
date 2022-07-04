@@ -383,7 +383,7 @@ z() // how will z (that is y function) finds the value of a to log it's value? T
 - Memory over-consumption (the variables at upper levels are not garbage collected)
 - Can lead to memory leak if not properly handled
 
-# Function statement && Function declaration
+# Function statement & Function declaration
 
 ```javascript
 a() // Hoisted and can be called
@@ -428,6 +428,14 @@ a(1, 2) // arguments 1 && 2
 ES6 (2015) Ecma Script
 
 # Pure Functions
+
+The functions that do not depend on external factors. The output will clearly and fully dependent on the input and will always return the same output for the same input. It does not depend on any state or data change during a program’s execution. Rather, it only depends on its input arguments.
+
+```javascript
+function calculateGST(productPrice) {
+  return productPrice * 0.05
+} // will always return 5% of the product price (same value for a same input)
+```
 
 # Callback Functions
 
@@ -595,16 +603,16 @@ console.log(obj2.getIntro()) // ahmed23lahore
 
 # `this` in arrow function & normal function
 
-- It actually makes sense. In the regular function, a function always defines its this value. Arrow functions treat this keyword differently. They don’t define their own context since it doesn’t have its own this context. They inherit that from the parent scope whenever you call this.
+- In the regular function, a function always defines its this value. Arrow functions treat this keyword differently. They don’t define their own context since it doesn’t have its own this context. They inherit that from the parent scope whenever you call this.
 
 ```javascript
 const parent = {
   name: "Talha Ahmad",
   name_1: () => {
-    return `${this.mom_name} is my name.`
+    return `${this.name} is my name.`
   },
   name_2: function () {
-    return `${this.mom_name} is my name.`
+    return `${this.name} is my name.`
   },
 }
 console.log(parent.name_1()) // undefined is my name.
