@@ -383,3 +383,71 @@ Will this return the contents of `data.json` to the client? assuming the file ex
     > True
 54. If a test suite fails when run as a batch but any individual test case passes run on its own, what is typically the root cause?
     > Failing to keep tests idempotent
+
+Challenge:
+
+For this challenge, you are required to write a Node.js function that takes a directory path and a depth parameter and returns a tree-like structure representing the directory and its contents up to the specified depth. The tree structure should include the name, type (file or directory), size (in bytes), and children (subdirectories or files) of each item in the directory.
+
+```javascript
+// Import fs from node
+const fs = require("fs")
+
+const directoryToTree = (rootDir, depth) => {
+  // Get path parts (array)
+  const paths = rootDir.split("/")
+
+  // Get current name of path
+  const currentName = paths[paths.length - 1]
+
+  // Get type of path (dir/file)
+  const type = currentName.includes(".") ? "file" : "dir"
+
+  // Get current path info - for size
+  const info = fs.statSync(rootDir)
+
+  // Create a base object to return
+  const result = {
+    path: rootDir,
+    name: currentName,
+    type: type,
+    size: info.size,
+    children: [],
+  }
+
+  // Base condition for depth
+  if (depth <= 0) return result
+
+  // Get children for current path
+  const children = fs.readdirSync(rootDir)
+
+  // Iterate over the children to get populate our final result
+  children.forEach((c) => {
+    // Get child path
+    const filePath = `${rootDir}/${c}`
+
+    // If the path is a file
+    if (c.includes(".")) {
+      // Get child info - for size
+      const fileInfo = fs.statSync(filePath)
+
+      // Push to the result children/sub paths
+      result.children.push({
+        path: filePath,
+        name: c,
+        type: "file",
+        size: fileInfo.size,
+      })
+    }
+    // If the file is a directory
+    else {
+      // Iterate over the directory
+      result.children.push(directoryToTree(filePath, depth - 1))
+    }
+  })
+
+  // Return result
+  return result
+}
+
+module.exports = directoryToTree
+```
