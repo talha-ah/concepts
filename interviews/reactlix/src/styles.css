@@ -1,0 +1,110 @@
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 300;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+h1 {
+  background-color: #f9f9f9;
+  font-size: 2rem;
+  padding: 1rem 0;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns:
+    [full-start] clamp(1rem, 2vw, 3rem) [main-start] 1fr [main-end] clamp(
+      1rem,
+      2vw,
+      3rem
+    )
+    [full-end];
+}
+
+.container > * {
+  grid-column: main;
+}
+
+.container > .full {
+  grid-column: full;
+}
+
+.filters {
+  border-bottom: 1px solid #eee;
+  display: grid;
+  gap: 0.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* Perhaps a grid? */
+.genres-list {
+  display: grid;
+  gap: 0.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.genre {
+  background-color: #f9f9f9;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.movies {
+  display: grid;
+  gap: 2rem;
+  margin: 0 auto;
+}
+
+.movie {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(3rem, 1fr) 2fr;
+}
+
+.movie-title {
+  font-size: 1.6rem;
+}
+
+.movie-image {
+  border-radius: 0.2rem;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.movie-content {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-rows: auto 1fr auto;
+}
+
+.movie-meta {
+  align-content: start;
+  justify-content: start;
+  display: grid;
+  gap: 0.2rem;
+  font-size: 0.8rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}

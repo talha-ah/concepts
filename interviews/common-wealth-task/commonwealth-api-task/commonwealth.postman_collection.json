@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "bae56094-f138-4a62-92e9-47476c1c5b3c",
+		"name": "BBC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23047032"
+	},
+	"item": [
+		{
+			"name": "Teams",
+			"item": [
+				{
+					"name": "Top 10",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/top10",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"top10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Medal Winners",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/medalWinners/:teamId",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"medalWinners",
+								":teamId"
+							],
+							"variable": [
+								{
+									"key": "teamId",
+									"value": "29"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Team",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pageUrl\": \"https://www.birmingham2022.com/teams/new/2ca98d6d-f4a6-4f15-b72c-40e70eb80a29\",\r\n    \"name\": \"NEW Created\",\r\n    \"id\": 29,\r\n    \"medals\": {\r\n        \"gold\": 0,\r\n        \"silver\": 0,\r\n        \"bronze\": 0\r\n    },\r\n    \"athletes\": [\r\n        {\r\n            \"name\": \"Delroy Carty\",\r\n            \"sports\": [\r\n                \"Cycling - Road\",\r\n                \"Cycling - Track and Para Track\",\r\n                \"Cycling - Mountain Bike\"\r\n            ],\r\n            \"gender\": \"M\",\r\n            \"age\": 30,\r\n            \"image\": \"https://b2022-images.microplustimingservices.com/DT_PIC/64889.jpg\"\r\n        }\r\n    ],\r\n    \"medalWinners\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/team",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"team"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}

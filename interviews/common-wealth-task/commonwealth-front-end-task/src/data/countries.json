@@ -1,0 +1,100 @@
+{
+  "countries": [
+    {
+      "id": 1,
+      "code": "ENG",
+      "name": "England",
+      "flagUrl": "https://static-files.birmingham2022.com/photos/flags/ENG.png"
+    },
+    {
+      "id": 2,
+      "code": "GHA",
+      "name": "Ghana",
+      "flagUrl": "https://static-files.birmingham2022.com/photos/flags/GHA.png"
+    },
+    {
+      "id": 3,
+      "code": "KEN",
+      "name": "Kenya",
+      "flagUrl": "https://static-files.birmingham2022.com/photos/flags/KEN.png"
+    },
+    {
+      "id": 4,
+      "code": "RSA",
+      "name": "South Africa",
+      "flagUrl": "https://static-files.birmingham2022.com/photos/flags/RSA.png"
+    },
+    {
+      "id": 5,
+      "code": "UGA",
+      "name": "Uganda",
+      "flagUrl": "https://static-files.birmingham2022.com/photos/flags/UGA.png"
+    },
+    {
+      "id": 6,
+      "code": "IND",
+      "name": "India",
+      "flagUrl": "https://static-files.birmingham2022.com/photos/flags/IND.png"
+    },
+    {
+      "id": 7,
+      "code": "MAS",
+      "name": "Malaysia",
+      "flagUrl": "https://static-files.birmingham2022.com/photos/flags/MAS.png"
+    },
+    {
+      "id": 8,
+      "code": "SRI",
+      "name": "Sri Lanka",
+      "flagUrl": "https://static-files.birmingham2022.com/photos/flags/SRI.png"
+    },
+    {
+      "id": 9,
+      "code": "SGP",
+      "name": "Singapore",
+      "flagUrl": "https://static-files.birmingham2022.com/photos/flags/SGP.png"
+    },
+    {
+      "id": 10,
+      "code": "BAR",
+      "name": "Barbados",
+      "flagUrl": "https://static-files.birmingham2022.com/photos/flags/BAR.png"
+    },
+    {
+      "id": 11,
+      "code": "GUY",
+      "name": "Guyana",
+      "flagUrl": "https://static-files.birmingham2022.com/photos/flags/GUY.png"
+    },
+    {
+      "id": 12,
+      "code": "JAM",
+      "name": "Jamaica",
+      "flagUrl": "https://static-files.birmingham2022.com/photos/flags/JAM.png"
+    },
+    {
+      "id": 13,
+      "code": "SCO",
+      "name": "Scotland",
+      "flagUrl": "https://static-files.birmingham2022.com/photos/flags/SCO.png"
+    },
+    {
+      "id": 14,
+      "code": "WAL",
+      "name": "Wales",
+      "flagUrl": "https://static-files.birmingham2022.com/photos/flags/WAL.png"
+    },
+    {
+      "id": 15,
+      "code": "AUS",
+      "name": "Australia",
+      "flagUrl": "https://static-files.birmingham2022.com/photos/flags/AUS.png"
+    },
+    {
+      "id": 16,
+      "code": "TGA",
+      "name": "Tonga",
+      "flagUrl": "https://static-files.birmingham2022.com/photos/flags/TGA.png"
+    }
+  ]
+}

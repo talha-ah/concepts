@@ -1,0 +1,27 @@
+.country-details {
+  width: 300px;
+  align-self: center;
+  background-color: #fff;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 10px 20px;
+
+  border-radius: 6px;
+  box-shadow: 0 0 10px 0 #d3d3d3;
+}
+
+.country-details h2 {
+  margin: 0;
+  margin-bottom: 6px;
+}
+
+.country-details p {
+  margin-top: 8px;
+}
+
+.country-details img {
+  height: 60px;
+  align-self: center;
+}

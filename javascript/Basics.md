@@ -652,3 +652,104 @@ console.log(parent.name_2()) // Talha Ahmad is my name.
 - Class is not hoisted means you need to initiate/declare the class before using it.
 - Static methods/properties in a class will be used without instantiating the class and cannot be called through the class instance.
 - Private instance fields are declared with #names (called hash names)
+
+# CommonJS VS ES Modules
+
+CommonJS (CJS) — the old Node.js way:
+
+```javascript
+const express = require("express") // import
+module.exports = { app } // export
+```
+
+ES Modules (ESM) — the modern standard (what Homify uses):
+
+```javascript
+import express from "express" // import
+export { app } // export
+```
+
+Why two systems exist: Node.js was created in 2009 before JavaScript had an official module system, so they invented CommonJS. In 2015, JavaScript got an official standard (ES Modules). Now ESM is the standard everywhere — browsers, Node.js, Bun, Deno.
+
+Key differences:
+
+|                | CommonJS                               | ES Modules                   |
+| -------------- | -------------------------------------- | ---------------------------- |
+| Syntax         | require() / module.exports             | import / export              |
+| Loading        | Synchronous (blocks)                   | Asynchronous                 |
+| When           | Runtime                                | Parsed before execution      |
+| Tree-shaking   | No (bundlers can't remove unused code) | Yes (unused exports removed) |
+| Browsers       | No                                     | Yes                          |
+| File extension | .cjs or .js                            | .mjs or .js                  |
+| Status         | Legacy                                 | Standard                     |
+
+## Synchronous vs Asynchronous loading
+
+CommonJS — blocks everything until the file is loaded:
+
+```javascript
+const a = require("./heavy-module") // ← stops here, loads the entire file
+const b = require("./another") // ← only runs after above is fully done
+console.log("ready") // ← waits for both
+```
+
+ESM — doesn't block, loads in parallel:
+
+```javascript
+import a from "./heavy-module" // ← both start loading
+import b from "./another" // ← at the same time
+console.log("ready") // ← runs when both are ready
+```
+
+Think of it like ordering food: CommonJS orders one dish, waits for it to arrive, then orders the next. ESM orders everything at once.
+
+## Runtime vs Parsed before execution:
+
+CommonJS — require() runs when that line executes, so you can do this:
+
+```javascript
+if (needsDatabase) {
+  const db = require("./database") // ← loaded only if condition is true
+}
+```
+
+ESM — all import statements are analyzed before ANY code runs:
+
+```javascript
+import db from "./database" // ← always loaded, even before line 1 runs
+
+// you CAN'T do this:
+if (needsDatabase) {
+  import db from "./database" // ❌ syntax error
+}
+```
+
+This is why ESM enables tree-shaking — since the bundler knows ALL imports upfront (before execution), it can see which exports are never used and remove them from the final bundle.
+
+## Exports/Imports
+
+In CommonJS, require() grabs everything the file exports as one object — so it works:
+
+```javascript
+// CommonJS
+const Service = require("./services") // gets { getUsers, createUser, ... }
+Service.getUsers() // ✅
+```
+
+In ESM, import X from specifically imports the default export only — not all named exports:
+
+```javascript
+// ESM
+import Service from "./services" // looks for: export default ...
+Service.getUsers() // ❌ undefined — no default export
+```
+
+To get the same behavior as require() in ESM, you use import \* as:
+
+```javascript
+// ESM — equivalent to require()
+import * as Service from "./services" // gets { getUsers, createUser, ... }
+Service.getUsers() // ✅
+```
+
+So require() = import \* as. That's the direct equivalent.

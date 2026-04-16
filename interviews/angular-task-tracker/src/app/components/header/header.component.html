@@ -1,0 +1,9 @@
+<header>
+  <h3>{{ title }}</h3>
+  <app-button
+    *ngIf="checkRoute('/')"
+    (onClick)="onAddClick()"
+    [text]="showForm ? 'Close' : 'Add'"
+    [color]="showForm ? 'red' : 'black'"
+  ></app-button>
+</header>

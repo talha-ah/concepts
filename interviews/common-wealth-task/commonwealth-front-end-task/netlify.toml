@@ -1,0 +1,12 @@
+[build]
+base='commonwealth-front-end-task'
+command = "yarn test && yarn build"
+publish="/build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+
+ 
